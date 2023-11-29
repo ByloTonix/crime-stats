@@ -13,12 +13,16 @@ if __name__ == "__main__":
         page_icon="💀",
         initial_sidebar_state="collapsed",
         layout="wide",
-        menu_items={
-            'Get help': 'https://t.me/ByloTonix',
-            'Report a bug': 'https://github.com/ByloTonix/crime-stats',
-            'About': '# I hope you like it'
-        }
     )
+    
+    hide_streamlit_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            </style>
+            """
+
+    st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
     
     with st.sidebar:
         st.write("Some information about my project:")
