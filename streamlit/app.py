@@ -1,6 +1,7 @@
 import pandas as pd
 import streamlit as st
 import plotly.express as px
+import plotly.graph_objects as go
 
 data = pd.read_csv("data\crime.csv", parse_dates=["month"], dayfirst=True)
 date = data["month"].dt.year
@@ -79,4 +80,21 @@ if __name__ == "__main__":
         labels={"x": "Year", "y": "Total Crimes"},
         title='Distribution of Different Types of Crimes'
     )
+    st.plotly_chart(fig, use_container_width=True)
+
+    crimes = st.multiselect('Select a crime', data[data.columns[2:]].axes[1])
+    filtered_data = data[['month'] + crimes]
+    filtered_data['month'] = pd.to_datetime(filtered_data['month'], format='%d.%m.%Y')
+    filtered_data.set_index('month', inplace=True)
+    fig = go.Figure()
+
+    for crime in crimes:
+        fig.add_trace(go.Scatter(x=filtered_data.index, y=filtered_data[crime], name=crime))
+
+    fig.update_layout(
+        title="Crime Stats",
+        xaxis_title="Year",
+        yaxis_title="Total crimes"
+    )
+
     st.plotly_chart(fig, use_container_width=True)
