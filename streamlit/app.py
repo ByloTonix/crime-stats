@@ -3,7 +3,7 @@ import streamlit as st
 import plotly.express as px
 import plotly.graph_objects as go
 
-data = pd.read_csv("data\crime.csv", parse_dates=["month"], dayfirst=True)
+data = pd.read_csv("data/crime.csv", parse_dates=["month"], dayfirst=True)
 date = data["month"].dt.year
 month_list = data["month"].dt.strftime("%B")
 
