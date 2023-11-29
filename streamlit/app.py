@@ -2,8 +2,7 @@ import pandas as pd
 import streamlit as st
 import plotly.express as px
 
-df = pd.read_csv("crime.csv")
-data = pd.read_csv("crime.csv", parse_dates=["month"], dayfirst=True)
+data = pd.read_csv("data\crime.csv", parse_dates=["month"], dayfirst=True)
 date = data["month"].dt.year
 month_list = data["month"].dt.strftime("%B")
 
@@ -81,5 +80,3 @@ if __name__ == "__main__":
         title='Distribution of Different Types of Crimes'
     )
     st.plotly_chart(fig, use_container_width=True)
-
-            
