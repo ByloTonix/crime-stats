@@ -16,7 +16,7 @@ if __name__ == "__main__":
         menu_items={
             'Get help': 'https://t.me/ByloTonix',
             'Report a bug': 'https://github.com/ByloTonix/crime-stats',
-            'About': '# This is a header. This is an *extremely* cool app!'
+            'About': '# I hope you like it'
         }
     )
     
