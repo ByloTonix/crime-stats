@@ -1,0 +1,3 @@
+plotly
+plotly.graph_objects
+pandas
