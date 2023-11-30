@@ -28,7 +28,7 @@ if __name__ == "__main__":
             <style>
             #MainMenu {visibility: hidden;}
             footer {visibility: hidden;}
-            .reportview-container .main footer {visibility: hidden;} 
+            header {visibility: hidden;}
             </style>
             """
     st.markdown(hide_streamlit_style, unsafe_allow_html=True)
