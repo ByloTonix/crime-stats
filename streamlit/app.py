@@ -68,7 +68,7 @@ if __name__ == "__main__":
             height=500,
         )
         st.plotly_chart(fig_bar, use_container_width=True)
-        st.dataframe(filtered_data, height=500)
+        st.dataframe(filtered_data, use_container_width=True, hide_index=True)
     else:
         month = st.selectbox("Select a :orange[month]", month_list.unique()) 
 
