@@ -3,7 +3,7 @@ import streamlit as st
 import plotly.express as px
 import plotly.graph_objects as go
 
-data = pd.read_csv("data/crime.csv", parse_dates=["month"], dayfirst=True)
+data = pd.read_csv("../data/crime.csv", parse_dates=["month"], dayfirst=True)
 date = data["month"].dt.year
 month_list = data["month"].dt.strftime("%B")
 
@@ -50,6 +50,7 @@ if __name__ == "__main__":
 
     # selectboxes for year and month
     year = st.selectbox("Select a :blue[year]", date.unique())
+
     ignore_month = st.checkbox("Ignore :red[month selection]")
 
     filtered_data = data[(date == year)]
@@ -57,7 +58,7 @@ if __name__ == "__main__":
     if ignore_month:
         month = st.selectbox("Select a :orange[month]", month_list.unique(), disabled = True)
         crime_data = filtered_data.iloc[:, 2:].sum().sort_values(ascending=False)
-
+        
         fig_bar = px.bar(
             x=crime_data.index,
             y=crime_data.values,
@@ -67,7 +68,7 @@ if __name__ == "__main__":
             height=500,
         )
         st.plotly_chart(fig_bar, use_container_width=True)
-
+        st.dataframe(filtered_data, height=500)
     else:
         month = st.selectbox("Select a :orange[month]", month_list.unique()) 
 
