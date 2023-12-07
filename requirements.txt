@@ -1,3 +1,2 @@
 plotly
 pandas
-matplotlib
