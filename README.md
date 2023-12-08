@@ -6,7 +6,7 @@ The dataset can be found here: [link](https://www.kaggle.com/datasets/tsarkov90/
 
 ## Notebook
 You can open the notebook directly on the GitHub:
-![alt text](data/screenshots/screenshot4.png)
+![alt text](data/screenshots/screenshot3.png)
 
 ## Client + API
 Flask Web Server (API) + Telegram Bot (Client)
