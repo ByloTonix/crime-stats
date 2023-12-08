@@ -1,5 +1,5 @@
 <h1 align="center">Crime Statistics</h1>
-<h4 align="center">Analysis of the crime dataset in Russia from 2003 to 2020</h4>
+<h4 align="center">Analysis of the crime data set in Russia for the period from 2003 to 2020</h4>
 
 ## Dataset
 The dataset can be found here: [link](https://www.kaggle.com/datasets/tsarkov90/crime-in-russia-20032020)
