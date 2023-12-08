@@ -6,15 +6,17 @@ The dataset can be found here: [link](https://www.kaggle.com/datasets/tsarkov90/
 
 ## Notebook
 You can open the notebook directly on the GitHub:
+
 ![alt text](data/screenshots/screenshot3.png)
 
 ## Client + API
 Flask Web Server (API) + Telegram Bot (Client)
 The Telegram bot is available at the [link](https://t.me/crime_stats_bot)
+
 ![alt text](data/screenshots/screenshot0.png)
 
 ## BI Data App
-Streamlit application is available [here](https://crime-stats.streamlit.app/)
+The Streamlit application is available [here](https://crime-stats.streamlit.app/)
 
 ![alt text](data/screenshots/screenshot1.png)
 ![alt text](data/screenshots/screenshot2.png)
