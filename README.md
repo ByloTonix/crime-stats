@@ -11,6 +11,7 @@ You can open the notebook directly on the GitHub:
 
 ## Client + API
 Flask Web Server (API) + Telegram Bot (Client)
+
 The Telegram bot is available at the [link](https://t.me/crime_stats_bot)
 
 ![alt text](data/screenshots/screenshot0.png)
