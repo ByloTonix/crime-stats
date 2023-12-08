@@ -111,7 +111,6 @@ if __name__ == "__main__":
         fig.add_trace(
             go.Scatter(x=filtered_data.index, y=filtered_data[crime], name=crime)
         )
-        st.balloons()
 
     fig.update_layout(
         title="Crime Stats", xaxis_title="Year", yaxis_title="Total crimes"
