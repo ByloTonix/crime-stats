@@ -23,7 +23,7 @@ if __name__ == "__main__":
         )
         st.link_button("Project Sources", "https://github.com/ByloTonix/crime-stats")
         
-    # remove buttons and "made by streamlit" text from webpage
+    # Remove Streamlit buttons and "made by Streamlit" text from the webpage
     hide_streamlit_style = """
             <style>
             #MainMenu {visibility: hidden;}
@@ -35,30 +35,27 @@ if __name__ == "__main__":
 
     st.title("Crime Statistics")
     
-    # statistic part
     st.subheader("Dataset statistics")
     col1, col2, col3 = st.columns(3)
+    period_value = f"{date.unique()[0]} - {date.unique()[-1]}, {len(date.unique())} years"
+    crimes_value = int(data.Total_crimes.sum())
+    types_value = len(data[data.columns[2:]].axes[1])
+    
     with col1:
-        _value = f"{date.unique()[0]} - {date.unique()[-1]}, {len(date.unique())} years"
-        st.metric(label="Period:", value=_value)
+        st.metric(label="Period:", value=period_value)
     with col2:
-        _value = int(data.Total_crimes.sum())
-        st.metric(label="Crimes:", value=_value)
+        st.metric(label="Crimes:", value=crimes_value)
     with col3:
-        _value = len(data[data.columns[2:]].axes[1])
-        st.metric(label="Types:", value=_value)
+        st.metric(label="Types:", value=types_value)
 
-    # selectboxes for year and month
     year = st.selectbox("Select a :blue[year]", date.unique())
-
     ignore_month = st.checkbox("Ignore :red[month selection]")
 
     filtered_data = data[(date == year)]
-    
+
     if ignore_month:
-        month = st.selectbox("Select a :orange[month]", month_list.unique(), disabled = True)
+        month = st.selectbox("Select a :orange[month]", month_list.unique(), disabled=True)
         crime_data = filtered_data.iloc[:, 2:].sum().sort_values(ascending=False)
-        
         fig_bar = px.bar(
             x=crime_data.index,
             y=crime_data.values,
@@ -70,15 +67,11 @@ if __name__ == "__main__":
         st.plotly_chart(fig_bar, use_container_width=True)
         st.dataframe(filtered_data, use_container_width=True, hide_index=True)
     else:
-        month = st.selectbox("Select a :orange[month]", month_list.unique()) 
-
+        month = st.selectbox("Select a :orange[month]", month_list.unique())
         filtered_data = data[(date == year) & (month_list == month)]
 
         if len(filtered_data) > 0:
-
-            # most popular crimes
             crime_data = filtered_data.iloc[:, 2:].sum().sort_values(ascending=False)
-
             fig_bar = px.bar(
                 x=crime_data.index,
                 y=crime_data.values,
@@ -88,10 +81,10 @@ if __name__ == "__main__":
                 height=500,
             )
             st.plotly_chart(fig_bar, use_container_width=True)
-
         else:
             st.write("No data available for the selected year and month.")
 
+    # Distribution of Different Types of Crimes
     fig = px.bar(
         data,
         x="month",
@@ -101,6 +94,7 @@ if __name__ == "__main__":
     )
     st.plotly_chart(fig, use_container_width=True)
 
+    # Select and display specific crimes over time
     crimes = st.multiselect("Select a crime", data[data.columns[2:]].axes[1])
     filtered_data = data[["month"] + crimes]
     filtered_data["month"] = pd.to_datetime(filtered_data["month"], format="%d.%m.%Y")
