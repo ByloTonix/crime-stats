@@ -1,8 +1,20 @@
-# crime-stats
-Stats about crimes in Russia for 2003-2020
+<h1 align="center">Crime Statistics</h1>
+<h4 align="center">Analysis of the crime dataset in Russia from 2003 to 2020</h4>
 
-[Dataset](https://www.kaggle.com/datasets/tsarkov90/crime-in-russia-20032020)
+## Dataset
+The dataset can be found here: [link](https://www.kaggle.com/datasets/tsarkov90/crime-in-russia-20032020)
 
-Streamlit BI Application [link](https://crime-stats.streamlit.app/)
-![alt text](screenshots/Streamlit0.png)
-![alt text](screenshots/Streamlit1.png)
+## Notebook
+You can open the notebook directly on the GitHub:
+![alt text](data/screenshots/screenshot4.png)
+
+## Client + API
+Flask Web Server (API) + Telegram Bot (Client)
+The Telegram bot is available at the [link](https://t.me/crime_stats_bot)
+![alt text](data/screenshots/screenshot0.png)
+
+## BI Data App
+Streamlit application is available [here](https://crime-stats.streamlit.app/)
+
+![alt text](data/screenshots/screenshot1.png)
+![alt text](data/screenshots/screenshot2.png)
