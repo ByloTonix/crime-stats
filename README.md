@@ -5,7 +5,7 @@
 The dataset can be found here: [link](https://www.kaggle.com/datasets/tsarkov90/crime-in-russia-20032020)
 
 ## Notebook
-You can open the notebook directly on the GitHub:
+You can open the notebook directly on the GitHub
 
 ![alt text](data/screenshots/screenshot4.png)
 
