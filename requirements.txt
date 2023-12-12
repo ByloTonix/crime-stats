@@ -1,3 +1,8 @@
 plotly
 pandas
-kaleido
+# for tg bot
+# flask
+# aiogram
+# aiohttp
+# kaleido
+# pandas
