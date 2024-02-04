@@ -14,7 +14,7 @@ But since Plotly charts don't work here, I recommend you open it elsewhere (goog
 ## Client + API
 Flask Web Server (API) + Telegram Bot (Client)
 
-The Telegram bot is available at the [link](https://t.me/crime_stats_bot)
+The Telegram bot was available [here](https://t.me/crime_stats_bot), but now it's off.
 
 ![alt text](data/screenshots/screenshot0.png)
 
