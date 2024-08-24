@@ -5,4 +5,3 @@ pandas
 # aiogram
 # aiohttp
 # kaleido
-# pandas
