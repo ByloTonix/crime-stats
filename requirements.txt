@@ -2,6 +2,6 @@ plotly
 pandas
 # for tg bot
 # flask
-# aiogram
+# aiogram==2.25.1
 # aiohttp
 # kaleido
