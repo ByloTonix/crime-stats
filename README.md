@@ -9,7 +9,7 @@ You can open the notebook directly on the GitHub
 
 ![alt text](data/screenshots/screenshot4.png)
 
-But since Plotly charts don't work here, I recommend you open it elsewhere (google collaboration or vs code)
+But since Plotly charts don't work here, I recommend you open it elsewhere (google colab or vs code)
 
 ## Client + API
 Flask Web Server (API) + Telegram Bot (Client)
